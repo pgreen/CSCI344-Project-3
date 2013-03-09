@@ -6,15 +6,21 @@
   </head>
   
   <body>
-    <div class="tabs">
-      <a class="tab active" href="tab1">All</a>
-      <a class="tab" href="tab2">Catagories</a>
-      <a class="tab" href="tab3">Add</a>
-    </div>
-    
-    <div id="todos">    
-    </div>
-    <div id="cats">
+  <div class="container">
+      <div class="inner_container">
+
+        <div class="tabs">
+          <a class="tab active" tab="tab-all" href="all">All</a>
+          <a class="tab" id="tab-categories" href="categories">Categories</a>
+          <a class="tab" id="tab-add" href="add-items">Add</a>
+        </div>
+        
+        <div class="content">
+          <div class="tab active" id="all">&nbsp;</div>
+          <div class="tab" id="categories">&nbsp;</div>
+        </div>
+
+      </div>
     </div>
  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
