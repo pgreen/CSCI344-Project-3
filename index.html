@@ -1,8 +1,12 @@
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
 <!doctype html>
 <html>
   <head>
     <link rel="stylesheet" href="stylesheets/app/app.css">
-    <title>ToDo List</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'/>
+	<title>ToDo List</title>
   </head>
   
   <body>
@@ -12,12 +16,22 @@
         <div class="tabs">
           <a class="tab active" tab="tab-all" href="all">All</a>
           <a class="tab" id="tab-categories" href="categories">Categories</a>
-          <a class="tab" id="tab-add" href="add-items">Add</a>
+          <a class="tab" id="tab-add" href="add">Add</a>
         </div>
         
         <div class="content">
           <div class="tab active" id="all">&nbsp;</div>
-          <div class="tab" id="categories">&nbsp;</div>
+          <div class="tab" id="categories">
+		  <h3>My To-Do List</h3>
+		  </div>
+          <div class="tab input" id="add">
+            <h3>Add item and categories to your todo list</h3>
+			<p>New item</p>
+			<input id="item_input" type="text"placeholder="New Item"/>
+			<p>New categories (separate with a comma)</p>
+			<input id="cat_input" type="text"placeholder="Categories"/>
+			<input type="Submit" src="btn.png" id="add-click" value="Click to Add"/>
+          </div>
         </div>
 
       </div>

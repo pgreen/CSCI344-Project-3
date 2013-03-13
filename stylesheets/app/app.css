@@ -1,23 +1,71 @@
 .tabs {
   margin-top: 50px;
-  margin-bottom:20px;
+  margin-bottom:10px;
+  font-family: Roboto Condensed, serif;
+  font-size: 24px;
 }
 
 .tabs .tab {
-  background: #ccc;
-  padding: 5px;
+  background: #95B0A1;
+  margin-left: 20px;
+  padding: 10px;
 }
 
 .tabs .active {
-  background: white;
+  background: #DAF5E5;
   border: 1px solid black;
   border-bottom-width: 0;
 }
 
+.content {
+	margin-top: 0;
+	margin-right: 20px;
+	font-family: Roboto Condensed, serif;
+}
 .content .tab {
   display: none; 
 }
 
 .content .active {
   display: block;
+  margin-left: 10px;
+  margin-top: 0;
+  font-size: 20px;
+  background: #DAF5E5;
 }
+
+.content .active #category {
+	margin-left: 20px;
+}
+
+.content .active .category p {
+	margin-left: 20px;
+}
+.content .active {
+	margin-left: 20px;
+	padding: 20px;
+}
+
+#user_input {
+  margin-left: 10px;
+  font-family: Roboto Condensed , serif;
+  font-size: 20px;
+  border:5px solid #95B0A1;
+  padding-left: 10px;
+}  
+
+#add-click {
+  font-family: Roboto Condensed, serif;
+  font-size: 20px;
+  border:5px outset #95B0A1;
+}
+
+#categories {
+	margin-top: 0;
+}
+
+h3{
+    margin: 0;
+    padding-top: 10px;
+}
+
