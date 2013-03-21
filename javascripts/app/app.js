@@ -19,8 +19,8 @@ var main = function () {
         todos.forEach(function (todo, itemIndex) {
             blockNum = itemIndex;
             $("<div id=" + "itemBlock" + blockNum  + "></div>").appendTo("#all");
-            $("<input type='Submit' src='btn.png' id='remove-click' data-index='" + blockNum + "' value='x'/>").appendTo("#" + "itemBlock" + blockNum);
-         //   $("<input type='Submit' src='btn.png' id='remove-click" + blockNum + "' value='x'/>").appendTo("#" + "itemBlock" + blockNum);
+            var itemToRemove = 'div#itemBlock' + blockNum;
+            $("<input type='Submit' src='btn.png' onClick=\"$('" + itemToRemove + "').remove();\" id='remove-click' data-index='" + blockNum + "' value='x'/>").appendTo("#" + "itemBlock" + blockNum);
             $("<h3 id='item' data-index='" + itemIndex + "'>" + todo.description  + "</h3>").appendTo("#" + "itemBlock" + blockNum);
             todo.categories.forEach(function (category) {
                 $("<p id='category' data-index='" + itemIndex + "'>" + category + "</p>").appendTo("#" + "itemBlock" + blockNum);
@@ -30,11 +30,14 @@ var main = function () {
     function loadCategories(category_name) {
         $("<div class='category' id='" + category_name + "'></div>").appendTo("#categories");
         $("<h3>" + category_name + "</h3>").appendTo("#" + category_name);
-        todos.forEach(function (todo) {
+        todos.forEach(function (todo, itemIndex) {
+            var pNum = itemIndex;
             todo.categories.forEach(function (category) {
                 if (category === category_name) {
                 // adds the item to a paragraph
-                    $("<p>" + todo.description + "</p>").appendTo("#" + category_name);
+                    var catItemToRemove = 'p#' + pNum;
+                    $("<input type='Submit' src='btn.png' onClick=\"$('" + catItemToRemove + "').remove();\" id='remove-click' value='x'/>").appendTo("#" + category_name);
+                    $("<p id=" + pNum + ">" + todo.description + "</p>").appendTo("#" + category_name);
                 }
             });
         });
@@ -61,15 +64,6 @@ var main = function () {
             loadCategories(category);
         });
     }//reloadCategories 
-    // remove the current item
-    function removeItem() {
-        var clickItem = $("#remove-click").parent();
-        clickItem.fadeOut(500, function () {
-            $(clickItem.remove());
-        });
-        //delete the item from the todos array
-        todos.splice((clickItem.attr("data-index")), 1);
-    }//removeItem
     function addItem() {
         var newItem,
             newCategories,
@@ -100,8 +94,6 @@ var main = function () {
         loadCatagoriesArray();
         categoryList.sort();//sorts the categories
         $("#tab-categories").click(reloadCategories);//reloads when clicked.
-        //$("#remove-click").attr("data-index").click(removeItem);
-        $("#remove-click").click(removeItem);
         $("#add-click").click(addItem);
     });
 
